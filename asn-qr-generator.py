@@ -1,32 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-"""
-ASN / Paperless QR Label Generator (PDF)
-
-Workflow:
-1) Select a sheet template (or Custom).
-   - If a template is selected, layout is loaded and we jump directly to "Number of pages".
-   - If Custom is selected, the user MUST enter all layout values (no defaults for layout).
-
-Rules:
-- Page size + margins define a fixed "sheetbox" (must NOT move).
-- rows/cols define the grid; label size is computed automatically.
-- Gaps: horizontal = left1/right, vertical = up/down.
-- QR is as large as possible:
-    - fixed 0.5 mm padding top/bottom
-    - width maximized while leaving space for text on the right
-- Text uses the remaining space to the right of the QR.
-
-Advanced submenu (optional):
-- Debug frames
-- X/Y offset (printer alignment)
-- X/Y scale (drift correction), anchored at sheetbox top-left.
-  Note: The RED sheetbox debug frame is NOT affected by offset/scale.
-
-Requires:
-  py -m pip install reportlab "qrcode[pil]" pillow
-"""
 
 import io
 import sys

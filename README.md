@@ -84,6 +84,11 @@ The script will guide you through the setup process:
 
 The script generates a PDF file with QR codes arranged on labels according to your specifications. Each QR code contains encoded information (e.g., ASN numbers) suitable for paperless scanning systems.
 
+## Images
+
+![Label Detail View](images/detail.jpg)
+![Full Sheet Preview](images/sheet.jpg)
+
 ## Templates
 
 Currently supported templates:
