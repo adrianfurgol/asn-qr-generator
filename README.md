@@ -107,7 +107,11 @@ Custom layouts allow full control over:
 
 - Ensure all dependencies are installed
 - Check that Python is in your PATH
-- For printing issues, verify PDF settings in your viewer
+- For printing issues, verify PDF settings in your viewer:
+  - Print at 100% scale (no scaling or fit-to-page)
+  - Ensure "Actual size" or "None" scaling is selected
+  - Check printer margins don't interfere with label edges
+  - Use the advanced offset/scale options in the script for printer calibration if needed
 
 ## Contributing
 
