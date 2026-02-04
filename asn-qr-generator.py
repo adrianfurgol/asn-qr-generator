@@ -12,7 +12,7 @@ Workflow:
 Rules:
 - Page size + margins define a fixed "sheetbox" (must NOT move).
 - rows/cols define the grid; label size is computed automatically.
-- Gaps: horizontal = left/right, vertical = up/down.
+- Gaps: horizontal = left1/right, vertical = up/down.
 - QR is as large as possible:
     - fixed 0.5 mm padding top/bottom
     - width maximized while leaving space for text on the right
@@ -173,12 +173,25 @@ def ask_float(prompt: str, default: Optional[float] = None, min_value: Optional[
         return val
 
 
-def ask_yes_no(prompt: str, default: bool = True) -> bool:
-    d = "y" if default else "n"
-    raw = input(f"{prompt} (y/n) [{d}]: ").strip().lower()
-    if not raw:
-        return default
-    return raw in ("y", "yes", "true", "1")
+def ask_yes_no(prompt: str, default: Optional[bool] = None) -> bool:
+    while True:
+        if default is not None:
+            d = "y" if default else "n"
+            raw = input(f"{prompt} (y/n) [{d}]: ").strip().lower()
+        else:
+            raw = input(f"{prompt} (y/n): ").strip().lower()
+        if not raw:
+            if default is not None:
+                return default
+            else:
+                print("Please enter y or n.")
+                continue
+        if raw in ("y", "yes", "true", "1"):
+            return True
+        elif raw in ("n", "no", "false", "0"):
+            return False
+        else:
+            print("Please enter y or n.")
 
 
 def ask_menu_choice(prompt: str, valid: Tuple[str, ...], default: Optional[str] = None, required: bool = False) -> str:
@@ -455,7 +468,7 @@ def select_template() -> Optional[dict]:
     print(f"  {len(TEMPLATES) + 1} - Custom")
 
     valid = tuple(str(i) for i in range(1, len(TEMPLATES) + 2))
-    choice = ask_menu_choice("Enter your choice", valid, default="1", required=False)
+    choice = ask_menu_choice("Enter your choice", valid, required=False)
 
     if choice == str(len(TEMPLATES) + 1):
         return None
@@ -637,7 +650,7 @@ def main():
             cfg = build_config_interactive()
             print_summary(cfg)
 
-            if not ask_yes_no("Do you wish to create the file with the above listed settings?", default=True):
+            if not ask_yes_no("Do you wish to create the file with the above listed settings?"):
                 print("\nRestarting...\n")
                 continue
 
