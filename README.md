@@ -1,6 +1,6 @@
 # ASN QR Sticker Generator
 
-A Python script to generate QR code labels for ASN (Advanced Shipping Notice) and paperless systems. Creates PDF files with customizable label layouts for printing on sticker sheets.
+A Python script to generate QR code labels for ASN (Archive Serial Number) and paperless systems. Creates PDF files with customizable label layouts for printing on sticker sheets.
 
 ## Features
 
@@ -120,3 +120,7 @@ See the `TEMPLATES` variable in the code for the required format. Accurate measu
 ## License
 
 See [LICENSE.txt](LICENSE.txt) for details.
+
+---
+
+*This project was created with the assistance of AI tools.*
