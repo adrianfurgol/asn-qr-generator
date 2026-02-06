@@ -16,7 +16,9 @@ A Python script to generate QR code labels for ASN (Archive Serial Number, e.g. 
 - Python 3.6 or higher
 - pip (Python package installer)
 
-## Installation
+## First time Setup
+
+The first time setup is quick, easy and takes 5 minutes max.
 
 ### 1. Download the Script
 
@@ -29,6 +31,7 @@ If you don't have Python installed:
 1. Go to [python.org](https://www.python.org/downloads/)
 2. Download and install Python 3.x
 3. Make sure to check "Add Python to PATH" during installation
+4. Restart your Computer
 
 ### 3. Install Dependencies
 
@@ -41,7 +44,7 @@ Open Command Prompt (CMD) in the folder containing the script. You can do this i
 cd path\to\your\script\folder
 ```
 
-If pip is not installed (it usually comes with Python 3.4+), install it first:
+If pip is not installed, install it first:
 
 ```cmd
 python -m ensurepip --upgrade
@@ -52,6 +55,8 @@ Then install the required packages:
 ```cmd
 pip install reportlab qrcode[pil] pillow
 ```
+
+Success! Now you can run the script. See [Usage instructions](#usage).
 
 **Note:** If `python` doesn't work in any command, try `py` instead (e.g., `py -m ensurepip --upgrade`).
 
@@ -69,15 +74,15 @@ python asn-qr-generator.py
 
 **Note:** If `python` doesn't work, try `py asn-qr-generator.py` instead. The `py` launcher is sometimes used on Windows systems.
 
-### Interactive Setup
+### Interactive Label Generation
 
 The script will guide you through the setup process:
 
 1. **Select Template**: Choose from predefined templates or create a custom layout
-2. **Configure Layout**: If custom, enter page size, margins, grid settings, etc.
+2. **Configure Layout**: If custom layout is chosen, enter page size, margins, grid settings, etc.
 3. **QR-Code Settings**: Specify prefix, starting number, leading zeros
 4. **Output Settings**: Set number of pages and output filename
-5. **Advanced Options** (optional): Debug frames, offset, scaling
+5. **Advanced Options** (optional): Debug frames, printer offset, scaling
 6. **Confirmation**: Review settings and generate PDF
 
 ### Example Output
