@@ -20,8 +20,8 @@ LETTER_MM = (215.9, 279.4)  # 8.5" x 11"
 # --- Templates ---
 TEMPLATES = [
     {
-        "key": "avery_l4731rev_25",
-        "name": "Avery L4731REV-25 (A4)",
+        "key": "avery_l4731",
+        "name": "Avery L4731 (A4)",
         "page_name": "A4",
         "page_w_mm": A4_MM[0],
         "page_h_mm": A4_MM[1],

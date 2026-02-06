@@ -4,7 +4,7 @@ A Python script to generate QR code labels for ASN (Archive Serial Number, e.g. 
 
 ## Features
 
-- Predefined label templates (e.g., Avery L4731REV-25)
+- Predefined label templates (e.g., Avery L4731)
 - Custom layout configuration
 - QR code generation with text labels (customizable)
 - PDF output optimized for printing
@@ -94,7 +94,7 @@ The script generates a PDF file with QR codes arranged on labels according to yo
 ## Templates
 
 Currently supported templates:
-- Avery L4731REV-25 (A4) - 27 rows × 7 columns
+- Avery L4731 (A4) - 27 rows × 7 columns
 
 Custom layouts allow full control over:
 - Page size and orientation
